@@ -41,7 +41,7 @@ delay(100);
 }
 ```
 <br>
-
+qdqwdfwq
 Week 2 -
  - In the form of a table, containing part name, quantity and a couple of words on what they do. Extra points if the parts are divided according to the building steps (below)
  - Remember to include the tools necessary as well! (pliers, saw, computer, etc)  
