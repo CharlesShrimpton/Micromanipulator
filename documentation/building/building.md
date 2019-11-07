@@ -18,6 +18,7 @@ digitalWrite(LED_BUILTIN, LOW);
 delay(100);
 }
 ```
+TEST
 
 - Succeeded in serial communication using a variable resistor and LED:
 
