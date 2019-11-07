@@ -7,7 +7,7 @@ Week 1 - getting started:
  - Succeeded in making an LED blink:
 
  ```C++
- void setup() {
+void setup() {
 pinMode(LED_BUILTIN, OUTPUT);
 }
 void loop() {
@@ -21,13 +21,11 @@ delay(100);
 
 - Succeeded in serial communication using a variable resistor and LED:
 
-```C++
+ ```C++
 const int analogInPin = A0;
 const int analogOutPin = 9;
-
 int sensorValue = 0;
 int outputValue = 0;
-
 void setup() {
 Serial.begin(74880);
 }
@@ -42,10 +40,6 @@ Serial.println(outputValue);
 delay(100);
 }
 ```
-
-
-
-
 <br>
 
 Week 2 -
