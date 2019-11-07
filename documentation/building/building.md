@@ -1,16 +1,54 @@
 
-**Use this folder to create files for building instructions:**
-- Each equipment is going to have a different building process, but here are some suggestions on how to organise things:
+**Progress:**
 
 <br>
 
-1. getting started:
- - a brief overview of the equipment people are about to build and what kind of knowledge they are expected to have (soldering, programming). Also, is this safe for amateurs/kids? Is it a one person build? How much time does it take on average to build it?
- - Could you add contact information (email, forum, twitter handle) for people to reach out in case something goes wrong?
+Week 1 - getting started:
+ - Succeeded in making an LED blink:
+
+ ```C++
+ void setup() {
+pinMode(LED_BUILTIN, OUTPUT);
+}
+void loop() {
+  // put your main code here, to run repeatedly:
+digitalWrite(LED_BUILTIN, HIGH);
+delay(100);
+digitalWrite(LED_BUILTIN, LOW);
+delay(100);
+}
+```
+
+- Succeeded in serial communication using a variable resistor and LED:
+
+```C++
+const int analogInPin = A0;
+const int analogOutPin = 9;
+
+int sensorValue = 0;
+int outputValue = 0;
+
+void setup() {
+Serial.begin(74880);
+}
+void loop() {
+sensorValue = analogRead(analogInPin);
+outputValue = map(sensorValue, 0, 1023, 0, 255);
+analogWrite(analogOutPin, outputValue);
+Serial.print("sensor = ");
+Serial.print(sensorValue);
+Serial.print("\t output = ");
+Serial.println(outputValue);
+delay(100);
+}
+```
+
+
+
 
 <br>
 
-2. List of materials needed:
+Week 2 -
  - In the form of a table, containing part name, quantity and a couple of words on what they do. Extra points if the parts are divided according to the building steps (below)
  - Remember to include the tools necessary as well! (pliers, saw, computer, etc)  
 
@@ -31,4 +69,3 @@
 
 4. Last checks before powering up/using for the first time:
  - Could people do one more check of everything before powering up things? Maybe double check that the capacitors were soldered in the proper orientation? Make sure there are no cut metal parts shorting the bottom side of the PCB? Make sure the area around the equipment is clear and won't be hit if the equipment has moving parts (eg shakers, centrifuges, etc).
- 
