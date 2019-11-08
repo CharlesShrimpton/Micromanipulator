@@ -3,7 +3,6 @@
 
 <br>
 
-Week 1 - getting started:
  - Succeeded in making an LED blink:
 
  ```C++
@@ -18,7 +17,6 @@ digitalWrite(LED_BUILTIN, LOW);
 delay(100);
 }
 ```
-TEST
 
 - Succeeded in serial communication using a variable resistor and LED:
 
@@ -41,26 +39,43 @@ Serial.println(outputValue);
 delay(100);
 }
 ```
-<br>
-qdqwdfwq
-Week 2 -
- - In the form of a table, containing part name, quantity and a couple of words on what they do. Extra points if the parts are divided according to the building steps (below)
- - Remember to include the tools necessary as well! (pliers, saw, computer, etc)  
+- Succeeded controlling stepper motor with potentiometer via motor driver
+```C++
+#include <Stepper.h>
+const int stepsPerRevolution = 200;
+Stepper myStepper(stepsPerRevolution, 8, 9, 10, 11);
+int stepCount = 0;
+void setup() {
+}
+void loop() {
+  // put your main code here, to run repeatedly:
+int sensorReading = analogRead(A0);
+int motorSpeed = map(sensorReading, 0, 1023, 0, 100);
+if (motorSpeed > 0) {
+  myStepper.setSpeed(motorSpeed);
+  myStepper.step(stepsPerRevolution / 200);
+  }
+}
+```
+- idea became apparent that using gears to achieve a lower minimal stepping resolution could be a sensible idea
+- additional idea that using a metal torque rod is better than a belt as there is less give
+
+- using the motor driver Adafruit TB6612 board in order to test the stepper motor, having difficulty with the power supply, we believe that the boards and motor are demanding more power and therefore are not making consistent movements
+ - fixed this issue by suppling the arduino board with external power supply
+- issue now is trying to get the motors to micro-step with the boards and motors available
+- i have 3D printed a bracket device that can be used to test the reproducibility and drift of the Nema 23 motor axis unit
 
 
- |part name| function  | quantity  | build step  | obs.  |
+
+
+
+
+
+
+
+|part name| function  | quantity  | build step  | obs.  |
  |---|---|---|---|---|
  |LM2596| voltage regulator  | 2  | 3  | these could be substituted by XX  |
  | Nose needle Pliers  | hold components while soldering  | 1  | all steps  | regular pliers would also work  |
 
 <br>
-
-
-3. build steps:
- - Divide this section in as many subparts as you like and try to be as clear as possible. Would someone seeing the whole thing for the first time be able to build it? (it is a good exercise to oversee someone building the equipment using only your written/video/figure instructions)
- - Is a video a better way to instruct people how to use it? try to keep the file size as small as possible without compromising quality. Also reach out to us, as a good idea might be to create a different repository for the video files.  
-
-<br>
-
-4. Last checks before powering up/using for the first time:
- - Could people do one more check of everything before powering up things? Maybe double check that the capacitors were soldered in the proper orientation? Make sure there are no cut metal parts shorting the bottom side of the PCB? Make sure the area around the equipment is clear and won't be hit if the equipment has moving parts (eg shakers, centrifuges, etc).
