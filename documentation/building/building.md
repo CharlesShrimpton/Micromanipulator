@@ -67,7 +67,7 @@ if (motorSpeed > 0) {
 - using the motor driver Adafruit TB6612 board in order to test the stepper motor, having difficulty with the power supply, we believe that the boards and motor are demanding more power and therefore are not making consistent movements
  - fixed this issue by suppling the arduino board with external power supply
 - issue now is trying to get the motors to micro-step with the boards and motors available
-- i have 3D printed a bracket device that can be used to test the reproducibility and drift of the Nema 23 motor axis unit, this bracket can  be screwed onto the  metal block on the  motor axis
+- i have 3D printed a bracket device that can be used to test the reproducibility and drift of the Nema 23 motor linear actuator unit, this bracket can  be screwed onto the  metal block on the  motor axis
  - using glass needles to test accuracy with a 3D printed bracket that screws onto the metal block
 
  ![](../media/needles.jpeg)
